@@ -1,18 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h3>{{text}}</h3>
+    <QrcodeStream @decode="onDecoded" style="height: 50vh; max-height: 500px"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import {QrcodeStream} from 'vue-qrcode-reader'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  data() { return { text: ""}},
+  methods: {
+    onDecoded(e) {
+      this.text = e
+    }
+  },
+  components: {QrcodeStream}
 }
 </script>
 
