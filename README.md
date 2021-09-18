@@ -1,5 +1,7 @@
 # qrscanner
 
+https://joe-chimienti.github.io/qrcodereader/
+
 ## Project setup
 ```
 npm install
